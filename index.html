@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سلطانة | كل واحدة سلطانة</title>
+  <meta name="description" content="عالمكِ الفاخر في تطبيق واحد: صالونات، خدمات منزلية، فساتين، قاعات، هدايا ومتجر.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236E1A32'/><polygon points='50,20 80,50 50,80 20,50' fill='%23C69F4F'/></svg>">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       HEADER / NAVBAR
+       ======================================================================== -->
+  <header class="site-header" id="mainHeader">
+    <div class="container header-inner">
+      
+      <!-- Right: Logo "سلطانة" -->
+      <div class="logo-wrapper" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <div class="logo-icon-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L2 12l10 10 10-10L12 2zm0 4.5l6.5 5.5-6.5 5.5L5.5 12 12 6.5z"/>
+          </svg>
+        </div>
+        <span class="logo-text">سلطانة</span>
+      </div>
+
+      <!-- Center: Navigation Links -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#services" class="nav-link">الخدمات</a></li>
+          <li><a href="#howItWorks" class="nav-link">كيف تعمل</a></li>
+          <li><a href="#partnerSection" class="nav-link">للشريكات</a></li>
+        </ul>
+      </nav>
+
+      <!-- Left: Waitlist Action Button & Cart -->
+      <div class="header-actions">
+        <button class="cart-icon-btn" id="openCartBtn" title="سلة المشتريات" aria-label="سلة المشتريات">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cartCounter">0</span>
+        </button>
+
+        <a href="#heroSection" class="btn-header-join" id="headerJoinBtn">
+          انضمي للقائمة
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ========================================================================
+       PAGE 1: HERO SECTION
+       ======================================================================== -->
+  <section class="hero-section" id="heroSection">
+    <div class="container hero-grid">
+      
+      <!-- Content (Right in RTL) -->
+      <div class="hero-content">
+        <div class="hero-badge-tag">
+          <span>قريباً على Google Play و App Store</span>
+        </div>
+
+        <h1 class="hero-title">
+          كل واحدة <span class="gold-accent">سلطانة</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          عالمكِ الفاخر في تطبيق واحد: صالونات، خدمات منزلية، فساتين، قاعات، هدايا ومتجر.
+        </p>
+
+        <!-- Waitlist Form matching PDF -->
+        <div class="hero-waitlist-form">
+          <form id="waitlistForm" onsubmit="handleWaitlistSubmit(event)">
+            <label class="waitlist-label" for="phoneInput">رقم الجوال</label>
+            <div class="waitlist-input-group">
+              <div class="waitlist-input-box">
+                <input 
+                  type="tel" 
+                  id="phoneInput" 
+                  class="waitlist-input" 
+                  placeholder="01xxxxxxxxx" 
+                  pattern="[0-9]{11}" 
+                  maxlength="11" 
+                  required
+                >
+              </div>
+              <button type="submit" class="btn-hero-waitlist" id="submitWaitlistBtn">
+                انضمي لقائمة الانتظار
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <p class="hero-note">
+          كوني من أول 1000 سلطانة، وهدية للأوائل.
+        </p>
+      </div>
+
+      <!-- App Mockup Preview (Left in RTL) -->
+      <div class="hero-mockup-wrapper">
+        <div class="phone-mockup-frame">
+          <div class="phone-mockup-screen">
+            <div class="phone-screen-header">
+              سلطانة
+            </div>
+            <div class="phone-categories-grid">
+              <div class="phone-cat-card" onclick="scrollToSection('salonsSection')">
+                <span class="diamond-icon">✦</span>
+                <span class="cat-title">صالونات</span>
+              </div>
+              <div class="phone-cat-card" onclick="scrollToSection('services')">
+                <span class="diamond-icon">✦</span>
+                <span class="cat-title">خدمات منزلية</span>
+              </div>
+              <div class="phone-cat-card" onclick="scrollToSection('dressesSection')">
+                <span class="diamond-icon">✦</span>
+                <span class="cat-title">فساتين</span>
+              </div>
+              <div class="phone-cat-card" onclick="scrollToSection('dressesSection')">
+                <span class="diamond-icon">✦</span>
+                <span class="cat-title">قاعات وشاليهات</span>
+              </div>
+              <div class="phone-cat-card" onclick="scrollToSection('storeSection')">
+                <span class="diamond-icon">✦</span>
+                <span class="cat-title">هدايا</span>
+              </div>
+              <div class="phone-cat-card" onclick="scrollToSection('storeSection')">
+                <span class="diamond-icon">✦</span>
+                <span class="cat-title">متجر</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PAGE 1: SECTION 1 - 6 خدمات في مكان واحد
+       ======================================================================== -->
+  <section class="section-block" id="services">
+    <div class="container">
+      <div class="section-header-center">
+        <h2 class="section-main-title">6 خدمات في مكان واحد</h2>
+        <p class="section-subtitle">نبدأ بالصالونات، ثم نضيف بقية الخدمات تباعًا.</p>
+      </div>
+
+      <div class="services-grid-6">
+        
+        <!-- Card 1: صالونات -->
+        <div class="service-card-cream">
+          <span class="card-diamond">✦</span>
+          <h3 class="service-title">صالونات</h3>
+          <p class="service-desc">
+            احجزي دلوقتي أو في ميعاد تاني مع الخبيرة اللي تختاريها.
+          </p>
+        </div>
+
+        <!-- Card 2: خدمات منزلية -->
+        <div class="service-card-cream">
+          <span class="card-diamond">✦</span>
+          <h3 class="service-title">خدمات منزلية</h3>
+          <p class="service-desc">
+            باديكير ومانيكير وتسريحة وميك أب بيجولك لحد البيت.
+          </p>
+        </div>
+
+        <!-- Card 3: فساتين -->
+        <div class="service-card-cream">
+          <span class="card-diamond">✦</span>
+          <h3 class="service-title">فساتين</h3>
+          <p class="service-desc">
+            تصفّحي، احجزي جاهز، أو اطلبي تفصيل عند مصممة.
+          </p>
+        </div>
+
+        <!-- Card 4: قاعات وشاليهات -->
+        <div class="service-card-cream">
+          <span class="card-diamond">✦</span>
+          <h3 class="service-title">قاعات وشاليهات</h3>
+          <p class="service-desc">
+            قوائم وتفاصيل وحجز بالتاريخ مع عروض خاصة.
+          </p>
+        </div>
+
+        <!-- Card 5: هدايا -->
+        <div class="service-card-cream">
+          <span class="card-diamond">✦</span>
+          <h3 class="service-title">هدايا</h3>
+          <p class="service-desc">
+            كارت هدية بالمبلغ اللي تختاريه لأي خدمة في التطبيق.
+          </p>
+        </div>
+
+        <!-- Card 6: متجر -->
+        <div class="service-card-cream">
+          <span class="card-diamond">✦</span>
+          <h3 class="service-title">متجر</h3>
+          <p class="service-desc">
+            منتجات وسلة ودفع وتتبّع للأوردر لحد ما يوصلك.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PAGE 1: SECTION 2 - كيف تعمل؟
+       ======================================================================== -->
+  <section class="section-block" id="howItWorks" style="padding-top: 10px;">
+    <div class="container">
+      <div class="section-header-center">
+        <h2 class="section-main-title">كيف تعمل؟</h2>
+      </div>
+
+      <div class="how-it-works-grid">
+        
+        <!-- Step 1 -->
+        <div class="how-step-card">
+          <div class="step-circle-badge">1</div>
+          <h3 class="step-title">اختاري الخدمة</h3>
+          <p class="step-desc">من الصالونات أو الخدمات المنزلية.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="how-step-card">
+          <div class="step-circle-badge">2</div>
+          <h3 class="step-title">حددي الوقت والخبيرة</h3>
+          <p class="step-desc">احجزي دلوقتي أو في ميعاد تاني بضغطة.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="how-step-card">
+          <div class="step-circle-badge">3</div>
+          <h3 class="step-title">ادفعي وتابعي</h3>
+          <p class="step-desc">فوري أو فودافون كاش أو إنستاباي أو كارت، وتابعي طلبك.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PAGE 2: SECTION 3 - عروض اليوم
+       ======================================================================== -->
+  <section class="section-block" id="offersSection">
+    <div class="container">
+      <div class="section-header-center">
+        <h2 class="section-main-title">عروض اليوم</h2>
+        <p class="section-subtitle">أكواد وباقات تظهر لك في الرئيسية.</p>
+      </div>
+
+      <div class="offers-grid-3">
+        
+        <!-- Offer 1 -->
+        <div class="offer-card-white">
+          <span class="offer-badge-pill">خصم %15</span>
+          <h3 class="offer-title">أول حجز لك</h3>
+          <p class="offer-desc">
+            للمسجلات الجديدات في أي صالون. الكود: FIRST15
+          </p>
+          <span class="offer-code-copy" onclick="copyCouponCode('FIRST15')">
+            <span>نسخ الكود: FIRST15</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </span>
+        </div>
+
+        <!-- Offer 2 -->
+        <div class="offer-card-white">
+          <span class="offer-badge-pill">وفّري %20</span>
+          <h3 class="offer-title">باقة العروس</h3>
+          <p class="offer-desc">
+            ميك أب وتسريحة وعناية بالبشرة في ميعاد واحد.
+          </p>
+          <span class="offer-code-copy" onclick="copyCouponCode('BRIDE20')">
+            <span>نسخ الكود: BRIDE20</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </span>
+        </div>
+
+        <!-- Offer 3 -->
+        <div class="offer-card-white">
+          <span class="offer-badge-pill">عروض خاصة</span>
+          <h3 class="offer-title">موسم الأفراح</h3>
+          <p class="offer-desc">
+            خصومات على القاعات والشاليهات حسب التاريخ.
+          </p>
+          <span class="offer-code-copy" onclick="copyCouponCode('WEDDING2026')">
+            <span>نسخ الكود: WEDDING2026</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PAGE 2: SECTION 4 - صالونات وخبيرات قريبة منك
+       ======================================================================== -->
+  <section class="section-block" id="salonsSection">
+    <div class="container">
+      <div class="section-header-center">
+        <h2 class="section-main-title">صالونات وخبيرات قريبة منك</h2>
+        <p class="section-subtitle">فلتري بالتقييم والمسافة، واحجزي دلوقتي أو في ميعاد تاني.</p>
+      </div>
+
+      <!-- Filter tabs matching PDF -->
+      <div class="filter-tabs-wrapper">
+        <button class="filter-tab-btn active" onclick="filterSalons('all', this)">الكل</button>
+        <button class="filter-tab-btn" onclick="filterSalons('topRated', this)">الأعلى تقييمًا</button>
+        <button class="filter-tab-btn" onclick="filterSalons('nearest', this)">الأقرب</button>
+        <button class="filter-tab-btn" onclick="filterSalons('instant', this)">حجز فوري</button>
+        <button class="filter-tab-btn" onclick="filterSalons('home', this)">خدمة منزلية</button>
+      </div>
+
+      <!-- 4 Salon Cards matching PDF -->
+      <div class="salons-grid-4" id="salonsGrid">
+        
+        <!-- Salon 1 -->
+        <div class="salon-card-item" data-category="topRated instant">
+          <div class="salon-top-banner">
+            <span class="diamond-symbol">✦</span>
+          </div>
+          <div class="salon-card-body">
+            <div>
+              <h3 class="salon-title">صالون لمسة ذهب</h3>
+              <p class="salon-location">القاهرة · التجمع الخامس</p>
+            </div>
+            <div class="salon-footer-row">
+              <span class="salon-rating-price">
+                <span class="star">★</span> 4.9 · من 300 ج.م
+              </span>
+              <button class="btn-salon-book" onclick="quickSelectSalon('صالون لمسة ذهب', 'ميك أب')">احجزي</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Salon 2 -->
+        <div class="salon-card-item" data-category="nearest instant">
+          <div class="salon-top-banner">
+            <span class="diamond-symbol">✦</span>
+          </div>
+          <div class="salon-card-body">
+            <div>
+              <h3 class="salon-title">لاونج الياسمين</h3>
+              <p class="salon-location">الإسكندرية · سموحة</p>
+            </div>
+            <div class="salon-footer-row">
+              <span class="salon-rating-price">
+                <span class="star">★</span> 4.8 · من 250 ج.م
+              </span>
+              <button class="btn-salon-book" onclick="quickSelectSalon('لاونج الياسمين', 'تسريحة')">احجزي</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Salon 3 -->
+        <div class="salon-card-item" data-category="topRated home">
+          <div class="salon-top-banner">
+            <span class="diamond-symbol">✦</span>
+          </div>
+          <div class="salon-card-body">
+            <div>
+              <h3 class="salon-title">ستوديو نورهان للمكياج</h3>
+              <p class="salon-location">القاهرة · مدينة نصر</p>
+            </div>
+            <div class="salon-footer-row">
+              <span class="salon-rating-price">
+                <span class="star">★</span> 4.7 · من 400 ج.م
+              </span>
+              <button class="btn-salon-book" onclick="quickSelectSalon('ستوديو نورهان للمكياج', 'ميك أب')">احجزي</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Salon 4 -->
+        <div class="salon-card-item" data-category="topRated nearest home">
+          <div class="salon-top-banner">
+            <span class="diamond-symbol">✦</span>
+          </div>
+          <div class="salon-card-body">
+            <div>
+              <h3 class="salon-title">بيوتي ريم</h3>
+              <p class="salon-location">الجيزة · الدقي</p>
+            </div>
+            <div class="salon-footer-row">
+              <span class="salon-rating-price">
+                <span class="star">★</span> 4.9 · من 280 ج.م
+              </span>
+              <button class="btn-salon-book" onclick="quickSelectSalon('بيوتي ريم', 'باديكير')">احجزي</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PAGE 2: SECTION 5 - احجزي في دقيقة (Interactive Booking Widget)
+       ======================================================================== -->
+  <section class="section-block" id="bookingSection">
+    <div class="container">
+      <div class="section-header-center">
+        <h2 class="section-main-title">احجزي في دقيقة</h2>
+        <p class="section-subtitle">اختاري الخدمة والوقت والخبيرة، ويتأكد الحجز بعد الدفع.</p>
+      </div>
+
+      <div class="booking-widget-container">
+        
+        <!-- Row 1: الخدمة -->
+        <div class="booking-form-row">
+          <div class="booking-row-label">الخدمة</div>
+          <div class="booking-options-group" id="serviceGroup">
+            <button type="button" class="booking-pill-btn active" data-price="850" onclick="selectBookingOption('service', 'ميك أب', 850, this)">ميك أب</button>
+            <button type="button" class="booking-pill-btn" data-price="600" onclick="selectBookingOption('service', 'تسريحة', 600, this)">تسريحة</button>
+            <button type="button" class="booking-pill-btn" data-price="350" onclick="selectBookingOption('service', 'باديكير', 350, this)">باديكير</button>
+            <button type="button" class="booking-pill-btn" data-price="300" onclick="selectBookingOption('service', 'مانيكير', 300, this)">مانيكير</button>
+          </div>
+        </div>
+
+        <!-- Row 2: اليوم -->
+        <div class="booking-form-row">
+          <div class="booking-row-label">اليوم</div>
+          <div class="booking-options-group" id="dayGroup">
+            <button type="button" class="booking-pill-btn" onclick="selectBookingOption('day', 'الأحد 11', null, this)">الأحد 11</button>
+            <button type="button" class="booking-pill-btn active" onclick="selectBookingOption('day', 'الاثنين 12', null, this)">الاثنين 12</button>
+            <button type="button" class="booking-pill-btn" onclick="selectBookingOption('day', 'الثلاثاء 13', null, this)">الثلاثاء 13</button>
+            <button type="button" class="booking-pill-btn" onclick="selectBookingOption('day', 'الأربعاء 14', null, this)">الأربعاء 14</button>
+          </div>
+        </div>
+
+        <!-- Row 3: الوقت -->
+        <div class="booking-form-row">
+          <div class="booking-row-label">الوقت</div>
+          <div class="booking-options-group" id="timeGroup">
+            <button type="button" class="booking-pill-btn" onclick="selectBookingOption('time', '4:00 م', null, this)">4:00 م</button>
+            <button type="button" class="booking-pill-btn active" onclick="selectBookingOption('time', '5:00 م', null, this)">5:00 م</button>
+            <button type="button" class="booking-pill-btn" onclick="selectBookingOption('time', '6:00 م', null, this)">6:00 م</button>
+            <button type="button" class="booking-pill-btn" onclick="selectBookingOption('time', '7:00 م', null, this)">7:00 م</button>
+            <span class="booking-slot-note">الوقت المحجوز غير متاح</span>
+          </div>
+        </div>
+
+        <!-- Row 4: الخبيرة -->
+        <div class="booking-form-row">
+          <div class="booking-row-label">الخبيرة</div>
+          <div class="booking-options-group" id="expertGroup">
+            <button type="button" class="booking-pill-btn active" onclick="selectBookingOption('expert', 'ريم', null, this)">ريم</button>
+            <button type="button" class="booking-pill-btn" onclick="selectBookingOption('expert', 'نورهان', null, this)">نورهان</button>
+            <button type="button" class="booking-pill-btn" onclick="selectBookingOption('expert', 'ميار', null, this)">ميار</button>
+          </div>
+        </div>
+
+        <!-- Row 5: الدفع -->
+        <div class="booking-form-row">
+          <div class="booking-row-label">الدفع</div>
+          <div class="booking-options-group" id="paymentGroup">
+            <button type="button" class="booking-pill-btn active" onclick="selectBookingOption('payment', 'فوري', null, this)">فوري</button>
+            <button type="button" class="booking-pill-btn" onclick="selectBookingOption('payment', 'فودافون كاش', null, this)">فودافون كاش</button>
+            <button type="button" class="booking-pill-btn" onclick="selectBookingOption('payment', 'إنستاباي', null, this)">إنستاباي</button>
+            <button type="button" class="booking-pill-btn" onclick="selectBookingOption('payment', 'كارت', null, this)">كارت</button>
+            <button type="button" class="booking-pill-btn" onclick="selectBookingOption('payment', 'محفظة التطبيق', null, this)">محفظة التطبيق</button>
+          </div>
+        </div>
+
+        <!-- Booking Summary & Confirmation matching PDF -->
+        <div class="booking-summary-bar">
+          <div class="booking-summary-text" id="bookingSummaryText">
+            ميك أب مع ريم · الاثنين 12 · 5:00 م · 850 ج.م
+          </div>
+          <button type="button" class="btn-confirm-booking" onclick="confirmBookingAction()">
+            تأكيد الحجز
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PAGE 3: SECTION 6 - فساتين وقاعات وشاليهات
+       ======================================================================== -->
+  <section class="section-block" id="dressesSection">
+    <div class="container">
+      <div class="section-header-center">
+        <h2 class="section-main-title">فساتين وقاعات وشاليهات</h2>
+        <p class="section-subtitle">تصفّحي، قارني، واحجزي بالتاريخ أو اطلبي تفصيل.</p>
+      </div>
+
+      <div class="dresses-venues-grid">
+        
+        <!-- Card 1 -->
+        <div class="dress-venue-card">
+          <div class="card-top-burgundy-block">
+            <span class="diamond-symbol">✦</span>
+          </div>
+          <div class="dress-venue-body">
+            <div>
+              <h3 class="item-title">فستان سهرة</h3>
+              <p class="item-info">من 3,500 ج.م</p>
+            </div>
+            <div>
+              <span class="item-tag-pill" onclick="openDressModal('فستان سهرة', '3,500 ج.م')">جاهز أو تفصيل</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="dress-venue-card">
+          <div class="card-top-burgundy-block">
+            <span class="diamond-symbol">✦</span>
+          </div>
+          <div class="dress-venue-body">
+            <div>
+              <h3 class="item-title">فستان زفاف</h3>
+              <p class="item-info">من 15,000 ج.م</p>
+            </div>
+            <div>
+              <span class="item-tag-pill" onclick="openDressModal('فستان زفاف', '15,000 ج.م')">تفصيل عند مصممة</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="dress-venue-card">
+          <div class="card-top-burgundy-block">
+            <span class="diamond-symbol">✦</span>
+          </div>
+          <div class="dress-venue-body">
+            <div>
+              <h3 class="item-title">قاعة الياسمين</h3>
+              <p class="item-info">القاهرة · تتسع 300 · من 60,000 ج.م</p>
+            </div>
+            <div>
+              <span class="item-tag-pill" onclick="openVenueModal('قاعة الياسمين', 'القاهرة · تتسع 300')">حجز بالتاريخ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="dress-venue-card">
+          <div class="card-top-burgundy-block">
+            <span class="diamond-symbol">✦</span>
+          </div>
+          <div class="dress-venue-body">
+            <div>
+              <h3 class="item-title">شاليه الواحة</h3>
+              <p class="item-info">العين السخنة · يتسع 40 · من 6,000 ج.م</p>
+            </div>
+            <div>
+              <span class="item-tag-pill" onclick="openVenueModal('شاليه الواحة', 'العين السخنة · يتسع 40')">حجز بالتاريخ</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PAGE 3: SECTION 7 - متجر سلطانة وكروت الهدايا
+       ======================================================================== -->
+  <section class="section-block" id="storeSection">
+    <div class="container">
+      <div class="section-header-center">
+        <h2 class="section-main-title">متجر سلطانة وكروت الهدايا</h2>
+        <p class="section-subtitle">أضيفي للسلة، أكملي الدفع، وتابعي طلبك.</p>
+      </div>
+
+      <div class="store-gifts-grid">
+        
+        <!-- Product 1 -->
+        <div class="store-product-card">
+          <div class="card-top-burgundy-block">
+            <span class="diamond-symbol">✦</span>
+          </div>
+          <div class="store-product-body">
+            <div>
+              <h3 class="product-title">عطر عود ملكي</h3>
+              <p class="product-price">950 ج.م</p>
+            </div>
+            <button class="btn-add-cart-gold" onclick="addToCart('عطر عود ملكي', 950)">أضيفي للسلة</button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="store-product-card">
+          <div class="card-top-burgundy-block">
+            <span class="diamond-symbol">✦</span>
+          </div>
+          <div class="store-product-body">
+            <div>
+              <h3 class="product-title">طقم عناية بالبشرة</h3>
+              <p class="product-price">850 ج.م</p>
+            </div>
+            <button class="btn-add-cart-gold" onclick="addToCart('طقم عناية بالبشرة', 850)">أضيفي للسلة</button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="store-product-card">
+          <div class="card-top-burgundy-block">
+            <span class="diamond-symbol">✦</span>
+          </div>
+          <div class="store-product-body">
+            <div>
+              <h3 class="product-title">حقيبة مكياج</h3>
+              <p class="product-price">600 ج.م</p>
+            </div>
+            <button class="btn-add-cart-gold" onclick="addToCart('حقيبة مكياج', 600)">أضيفي للسلة</button>
+          </div>
+        </div>
+
+        <!-- Card 4: كارت هدية (Full Burgundy matching PDF) -->
+        <div class="gift-card-full-burgundy">
+          <div>
+            <span class="gift-card-diamond">✦</span>
+            <h3 class="gift-card-title">كارت هدية</h3>
+            <p class="gift-card-subtitle">لأي خدمة جوه التطبيق</p>
+            <div class="gift-denominations" id="giftDenomGroup">
+              <span class="gift-denom-chip" onclick="selectGiftDenom(300, this)">300 ج.م</span>
+              <span class="gift-denom-chip active" onclick="selectGiftDenom(500, this)">500 ج.م</span>
+              <span class="gift-denom-chip" onclick="selectGiftDenom(1000, this)">1,000 ج.م</span>
+            </div>
+          </div>
+          <button class="btn-gift-gold" onclick="buyGiftCard()">اهدي دلوقتي</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PAGE 3: SECTION 8 - تتبّعي طلبك لحظة بلحظة
+       ======================================================================== -->
+  <section class="section-block" id="trackingSection">
+    <div class="container">
+      <div class="section-header-center">
+        <h2 class="section-main-title">تتبّعي طلبك لحظة بلحظة</h2>
+        <p class="section-subtitle">حالة واضحة، وموقع الخبيرة مع الوقت المتوقع للوصول.</p>
+      </div>
+
+      <div class="order-tracking-card">
+        
+        <!-- Stepper matching PDF -->
+        <div class="tracking-stepper">
+          
+          <!-- Step 1: قيد الانتظار (Completed) -->
+          <div class="stepper-step completed" onclick="setTrackingStep(1)">
+            <div class="step-node">✓</div>
+            <span class="step-label">قيد الانتظار</span>
+          </div>
+
+          <!-- Step 2: مؤكد (Completed) -->
+          <div class="stepper-step completed" onclick="setTrackingStep(2)">
+            <div class="step-node">✓</div>
+            <span class="step-label">مؤكد</span>
+          </div>
+
+          <!-- Step 3: قيد التنفيذ (Active) -->
+          <div class="stepper-step active" onclick="setTrackingStep(3)">
+            <div class="step-node">3</div>
+            <span class="step-label">قيد التنفيذ</span>
+          </div>
+
+          <!-- Step 4: مكتمل -->
+          <div class="stepper-step" onclick="setTrackingStep(4)">
+            <div class="step-node">4</div>
+            <span class="step-label">مكتمل</span>
+          </div>
+
+          <!-- Step 5: ملغي -->
+          <div class="stepper-step" onclick="setTrackingStep(5)">
+            <div class="step-node">5</div>
+            <span class="step-label">ملغي</span>
+          </div>
+
+        </div>
+
+        <!-- Simulated Tracking Map View matching PDF -->
+        <div class="tracking-map-box">
+          <!-- Stylized Road Line SVG -->
+          <svg class="tracking-map-svg" viewBox="0 0 600 160" preserveAspectRatio="none">
+            <path d="M 30,120 Q 150,30 300,90 T 570,40" fill="none" stroke="#EADBCC" stroke-width="8" stroke-linecap="round"/>
+            <path d="M 30,120 Q 150,30 300,90" fill="none" stroke="#C69F4F" stroke-width="8" stroke-linecap="round"/>
+            <circle cx="30" cy="120" r="10" fill="#6E1A32" />
+            <circle cx="300" cy="90" r="12" fill="#C69F4F" stroke="#FFFFFF" stroke-width="4"/>
+            <circle cx="570" cy="40" r="10" fill="#EADBCC" />
+          </svg>
+
+          <!-- Driver ETA Badge matching PDF -->
+          <div class="driver-eta-badge">
+            <div class="driver-eta-title">الخبيرة ريم في الطريق</div>
+            <div class="driver-eta-sub">الوصول خلال 15 دقيقة</div>
+          </div>
+        </div>
+
+        <!-- Action Buttons & Cancellation Policy matching PDF -->
+        <div class="tracking-actions-bar">
+          <div class="tracking-buttons-group">
+            <button class="btn-track-action primary" onclick="rescheduleOrder()">إعادة جدولة</button>
+            <button class="btn-track-action outline" onclick="cancelOrder()">إلغاء الطلب</button>
+          </div>
+          <div class="cancellation-policy-note">
+            إلغاء مجاني قبل الميعاد بـ 24 ساعة.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PAGE 3 & 4: SECTION 9 - دعم وشات على مدار الساعة + FAQ
+       ======================================================================== -->
+  <section class="section-block" id="supportSection">
+    <div class="container">
+      <div class="section-header-center">
+        <h2 class="section-main-title">دعم وشات على مدار الساعة</h2>
+        <p class="section-subtitle">تواصلي مع الخبيرة أو الدعم بالنص والصور والموقع.</p>
+      </div>
+
+      <div class="support-chat-faq-grid">
+        
+        <!-- Live Chat Simulator matching PDF Page 4 -->
+        <div class="chat-window-card">
+          <div class="chat-header-bar">
+            <div class="chat-expert-info">
+              <span class="chat-status-dot"></span>
+              <span class="chat-header-title">محادثة مع الخبيرة ريم</span>
+            </div>
+          </div>
+
+          <div class="chat-messages-body" id="chatMessages">
+            <!-- Incoming message -->
+            <div class="chat-bubble expert">
+              أهلًا بيكي، أنا في الطريق.
+            </div>
+            <!-- Outgoing message -->
+            <div class="chat-bubble user">
+              تمام، ده موقعي.
+            </div>
+          </div>
+
+          <div class="chat-input-controls">
+            <div class="chat-quick-chips">
+              <button type="button" class="chat-chip" onclick="sendQuickChatMessage('📍 شاركت موقعي الحالي')">موقعي</button>
+              <button type="button" class="chat-chip" onclick="sendQuickChatMessage('📷 أرسلت صورة المكان')">صورة</button>
+            </div>
+            <form class="chat-form-row" onsubmit="handleChatSubmit(event)">
+              <input type="text" id="chatInput" class="chat-input-field" placeholder="اكتبي رسالتك..." autocomplete="off">
+              <button type="submit" class="btn-chat-send">إرسال</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- FAQ Accordion List matching PDF Page 4 -->
+        <div class="faq-list-container">
+          
+          <!-- Q1 -->
+          <div class="faq-card-box" onclick="toggleFaq(this)">
+            <div class="faq-question-title">
+              <span>ألغي الحجز إزاي؟</span>
+              <span>▾</span>
+            </div>
+            <div class="faq-answer-text">
+              من تبويب الطلبات، قبل الميعاد بـ 24 ساعة من غير رسوم.
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="faq-card-box" onclick="toggleFaq(this)">
+            <div class="faq-question-title">
+              <span>أدفع إمتى؟</span>
+              <span>▾</span>
+            </div>
+            <div class="faq-answer-text">
+              عند التأكيد، ويثبت الحجز بعد نجاح الدفع.
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="faq-card-box" onclick="toggleFaq(this)">
+            <div class="faq-question-title">
+              <span>عندي مشكلة، أعمل إيه؟</span>
+              <span>▾</span>
+            </div>
+            <div class="faq-answer-text">
+              ارفعي شكوى بالصور وتابعي حالتها: تم الاستلام، قيد المعالجة، تم الحل.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PAGE 4: SECTION 10 - آراء العميلات
+       ======================================================================== -->
+  <section class="section-block" id="testimonialsSection">
+    <div class="container">
+      <div class="section-header-center">
+        <h2 class="section-main-title">آراء العميلات</h2>
+        <p class="section-subtitle">تقييمات بالنجوم والتعليق والصور.</p>
+      </div>
+
+      <div class="testimonials-grid-3">
+        
+        <!-- Review 1 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              حجزت ميك أب لفرح صاحبتي في دقيقتين، والخبيرة وصلت في الميعاد.
+            </p>
+          </div>
+          <div class="testimonial-author">نورهان · القاهرة</div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              بحب إني أشوف التقييمات والصور قبل ما أختار.
+            </p>
+          </div>
+          <div class="testimonial-author">ريم · الإسكندرية</div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-stars">★★★★☆</div>
+            <p class="testimonial-quote">
+              الدعم رد عليا بسرعة وحلّوا المشكلة.
+            </p>
+          </div>
+          <div class="testimonial-author">سارة · المنصورة</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PAGE 4: SECTION 11 - خارطة الطريق
+       ======================================================================== -->
+  <section class="section-block" id="roadmapSection">
+    <div class="container">
+      <div class="section-header-center">
+        <h2 class="section-main-title">خارطة الطريق</h2>
+        <p class="section-subtitle">نطلق على مراحل.</p>
+      </div>
+
+      <div class="roadmap-grid-3">
+        
+        <!-- Phase 1 -->
+        <div class="roadmap-phase-card">
+          <span class="roadmap-badge-burgundy">المرحلة 1</span>
+          <p class="roadmap-desc">
+            تسجيل وحجز صالونات ودفع وطلبات.
+          </p>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="roadmap-phase-card">
+          <span class="roadmap-badge-burgundy">المرحلة 2</span>
+          <p class="roadmap-desc">
+            متجر وشات وتقييم وخدمات منزلية.
+          </p>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="roadmap-phase-card">
+          <span class="roadmap-badge-burgundy">المرحلة 3</span>
+          <p class="roadmap-desc">
+            فساتين وقاعات وشاليهات ومنتجعات وكروت هدايا.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PAGE 4: SECTION 12 - ليش سلطانة؟
+       ======================================================================== -->
+  <section class="section-block" id="whySection">
+    <div class="container">
+      <div class="section-header-center">
+        <h2 class="section-main-title">ليش سلطانة؟</h2>
+      </div>
+
+      <div class="why-sultana-grid-4">
+        
+        <!-- Feature 1 -->
+        <div class="why-card">
+          <h3 class="why-card-title">ادفعي بالطريقة اللي تريّحك</h3>
+          <p class="why-card-desc">
+            فوري وفودافون كاش وإنستاباي والكروت ومحفظة التطبيق.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="why-card">
+          <h3 class="why-card-title">تتبّعي خبيرتك على الخريطة</h3>
+          <p class="why-card-desc">
+            مع الوقت المتوقع للوصول في الخدمات المنزلية.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="why-card">
+          <h3 class="why-card-title">دعم وشات على مدار الساعة</h3>
+          <p class="why-card-desc">
+            تواصلي مع الخبيرة أو فريق الدعم من داخل التطبيق.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="why-card">
+          <h3 class="why-card-title">قيّمي تجربتك</h3>
+          <p class="why-card-desc">
+            نجوم وتعليق وصور بعد كل خدمة.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PAGE 4: PARTNER CTA BANNER - خبيرة أو صالون؟ انضمي لسلطانة
+       ======================================================================== -->
+  <section class="partner-cta-section" id="partnerSection">
+    <div class="container">
+      <div class="partner-cta-inner">
+        <div>
+          <h2 class="partner-cta-title">
+            خبيرة أو صالون؟ <span class="gold-accent">انضمي لسلطانة</span>
+          </h2>
+          <p class="partner-cta-sub">
+            اعرضي خدماتك، واستقبلي الأوردرات، ونظّمي مواعيدك من مكان واحد.
+          </p>
+        </div>
+        <button class="btn-partner-gold" onclick="openPartnerModal()">
+          سجّلي كشريكة
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PAGE 4: FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        سلطانة
+      </div>
+      <div>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link">sultana.app@</a>
+      </div>
+      <div class="footer-disclaimer">
+        الأسماء والأسعار والتقييمات هنا أمثلة تجريبية. © 2026 سلطانة. جميع الحقوق محفوظة.
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ========================================================================
+       MODALS & DIALOGS
+       ======================================================================== -->
+  
+  <!-- Booking Confirmation Modal -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeModal('bookingModal')">&times;</button>
+      <div class="modal-icon-circle">✓</div>
+      <h3 class="modal-title">تم تسجيل طلب الحجز بنجاح!</h3>
+      <p class="modal-body-text">
+        سلطانة تتمنى لكِ تجربة ملكية فاخرة. تم حجز الميعاد وسيتواصل معكِ فريق العمل فور التأكيد.
+      </p>
+      <div class="modal-receipt-box" id="modalReceiptDetails">
+        <!-- Injected via JS -->
+      </div>
+      <button class="btn-confirm-booking" style="width: 100%;" onclick="closeModal('bookingModal')">
+        تم، عودة للرئيسية
+      </button>
+    </div>
+  </div>
+
+  <!-- Waitlist Modal -->
+  <div class="modal-backdrop" id="waitlistModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeModal('waitlistModal')">&times;</button>
+      <div class="modal-icon-circle">🎁</div>
+      <h3 class="modal-title">أهلاً بكِ في قائمة الانتظار الملكية</h3>
+      <p class="modal-body-text" id="waitlistSuccessMsg">
+        تم تسجيل رقمك بنجاح! أنتِ الآن من أوائل 1,000 سلطانة وستحصلين على كود خصم وهدية خاصة فور الإطلاق الرسمي.
+      </p>
+      <div class="modal-receipt-box">
+        <strong>كود هديتك الخاصة:</strong> <span style="color: var(--burgundy); font-weight:800;">SULTANA-VIP</span><br>
+        <strong>الهدية:</strong> خصم 20% + هدية عناية مجانية مع أول طلب
+      </div>
+      <button class="btn-confirm-booking" style="width: 100%;" onclick="closeModal('waitlistModal')">
+        شكرًا، ممتاز
+      </button>
+    </div>
+  </div>
+
+  <!-- Partner Registration Modal -->
+  <div class="modal-backdrop" id="partnerModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeModal('partnerModal')">&times;</button>
+      <div class="modal-icon-circle">✦</div>
+      <h3 class="modal-title">انضمي كشريكة إلى سلطانة</h3>
+      <p class="modal-body-text">
+        سواء كنتِ خبيرة تجميل مستقلة أو صاحبة صالون، أهلاً بكِ في شبكة سلطانة الفاخرة.
+      </p>
+      <form onsubmit="handlePartnerSubmit(event)" style="text-align: right; margin-bottom: 20px;">
+        <div style="margin-bottom: 12px;">
+          <label style="display:block; font-size:0.88rem; margin-bottom:4px; font-weight:700;">الاسم الكامل أو اسم الصالون:</label>
+          <input type="text" required style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; font-family:inherit;">
+        </div>
+        <div style="margin-bottom: 12px;">
+          <label style="display:block; font-size:0.88rem; margin-bottom:4px; font-weight:700;">رقم الهاتف / الواتساب:</label>
+          <input type="tel" required placeholder="01xxxxxxxxx" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; font-family:inherit; direction:ltr; text-align:right;">
+        </div>
+        <div style="margin-bottom: 18px;">
+          <label style="display:block; font-size:0.88rem; margin-bottom:4px; font-weight:700;">نوع النشاط:</label>
+          <select style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; font-family:inherit;">
+            <option>صالون تجميل</option>
+            <option>خبيرة مكياج (Makeup Artist)</option>
+            <option>خبيرة شعر وتسريحات</option>
+            <option>مصممة أزياء / أتيليه فساتين</option>
+            <option>قاعة أفراح / شاليه</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-confirm-booking" style="width: 100%;">إرسال طلب الانضمام</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cart Drawer Modal -->
+  <div class="modal-backdrop" id="cartModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeModal('cartModal')">&times;</button>
+      <div class="modal-icon-circle">🛍️</div>
+      <h3 class="modal-title">سلة المشتريات</h3>
+      <div id="cartItemsList" style="text-align: right; max-height: 240px; overflow-y: auto; margin-bottom: 20px;">
+        <!-- Injected via JS -->
+      </div>
+      <div class="modal-receipt-box" id="cartTotalBox">
+        <strong>الإجمالي:</strong> <span id="cartTotalPrice">0 ج.م</span>
+      </div>
+      <button class="btn-confirm-booking" style="width: 100%;" onclick="checkoutCart()">
+        إتمام الطلب
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toastNotice">
+    تم بنجاح!
+  </div>
+
+
+  <!-- JavaScript Interaction Logic -->
+  <script src="js/main.js"></script>
+</body>
+</html>

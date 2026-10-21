@@ -1,0 +1,22 @@
+{
+  "name": "sultana-app",
+  "version": "1.0.0",
+  "description": "منصة وتطبيق سلطانة - عالمكِ الفاخر للصالونات والخدمات المنزلية والفساتين والقاعات والهدايا",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -p 3000",
+    "dev": "npx serve . -p 3000"
+  },
+  "keywords": [
+    "sultana",
+    "beauty",
+    "salons",
+    "spa",
+    "egypt",
+    "fashion",
+    "luxurious",
+    "landing-page"
+  ],
+  "author": "Sultana Team",
+  "license": "MIT"
+}
